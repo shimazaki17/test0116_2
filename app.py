@@ -7,6 +7,7 @@ def hello_world():
     response_body = 'Hello World'
     yield response_body.encode()
 
-from wsgiref.simple_server import make_server
-httpd = make_server('localhost', 5555, hello_world)
-httpd.serve_forever()
+if __name__ == '__main__':
+    from wsgiref.simple_server import make_server
+    httpd = make_server('localhost', 5555, hello_world)
+    httpd.serve_forever()
